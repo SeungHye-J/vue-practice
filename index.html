@@ -1,0 +1,42 @@
+<!-- ! + Tab 누르면 html 틀 나옴 --> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue 기초익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--양방향바인딩 예제
+        -->
+        <form v-on:submit.prevent="submit">
+            <!-- <input type="text" :value="text" @keyup="updateText"><br> -->
+            <!-- :value="text" @keyup="updateText"  -> v-model 로 대체하여 양방향 바인딩을 할 수 있음 아래에 함수 필요X-->
+            <input type="text" v-model="text"><br>
+            {{ text }}<br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data: {
+               year: 2018,
+               text: 'text'
+            },
+            methods: {
+                // updateText(event){
+                //     this.text = event.target.value;
+                // },
+                submit(){
+                    alert('submitted');
+                    console.log('hello');
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

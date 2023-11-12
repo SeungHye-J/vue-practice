@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue.js 2 기초익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--form 으로 submit하기 예제-->
+        <form v-on:submit.prevent="submit">
+            <input type="text"><br>
+            <button type="submit">Submit</button>
+        </form>
+       
+    </div>
+    <script>
+        // vue인스턴스 생성
+        new Vue ({
+            el: '#app',
+            data: {
+            },
+            //vue 메소드 생성
+            methods: {
+                submit(){
+                    alert('submitted');
+                    console.log('hello');
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>
